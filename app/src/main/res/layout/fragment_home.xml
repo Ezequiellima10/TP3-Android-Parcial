@@ -8,7 +8,7 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_image"
+        android:id="@+id/card_image_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -73,13 +73,13 @@
         </FrameLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Icono de vuelo -->
+
     <ImageView
         android:id="@+id/icon_flight"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/card_image"
+        app:layout_constraintTop_toBottomOf="@id/card_image_home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
     <!-- android:src="@drawable/your_image" -->

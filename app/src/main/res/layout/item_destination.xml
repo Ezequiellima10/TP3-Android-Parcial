@@ -15,14 +15,14 @@ app:cardElevation="4dp">
     android:padding="16dp">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/card_image_destination_item"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop" />
     <!-- android:src="@drawable/your_image" -->
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/title_destination_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Boracay"
@@ -30,7 +30,7 @@ app:cardElevation="4dp">
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/subtitle"
+        android:id="@+id/code_destination_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
@@ -38,7 +38,7 @@ app:cardElevation="4dp">
         />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/description_destination_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="2"
