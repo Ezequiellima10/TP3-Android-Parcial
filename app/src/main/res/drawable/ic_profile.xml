@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="vector"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+    <path
+        android:name="path"
+        android:pathData="M 480 468 Q 404 468 351 415 Q 298 362 298 286 Q 298 210 351 157 Q 404 104 480 104 Q 556 104 609 157 Q 662 210 662 286 Q 662 362 609 415 Q 556 468 480 468 Z M 130 861 L 130 718 Q 130 677 149.69 644.15 Q 169.38 611.29 202 594 Q 268 560 337.91 543 Q 407.82 526 479.91 526 Q 552 526 622 543 Q 692 560 758 594 Q 790.63 611.29 810.31 644.15 Q 830 677 830 718 L 830 861 L 130 861 Z M 236 755 L 724 755 L 724 718 Q 724 707 720.5 700 Q 717 693 711 690 Q 656 663 596.5 647.5 Q 537 632 480 632 Q 423 632 363.5 647 Q 304 662 249 690 Q 243 692 239.5 699.5 Q 236 707 236 718 L 236 755 Z M 480 362 Q 512 362 534 340 Q 556 318 556 286 Q 556 254 534 232 Q 512 210 480 210 Q 448 210 426 232 Q 404 254 404 286 Q 404 318 426 340 Q 448 362 480 362 Z M 480 286 Z M 480 755 Z"
+        android:fillColor="#7e8b97"
+        android:strokeWidth="1"/>
+</vector>

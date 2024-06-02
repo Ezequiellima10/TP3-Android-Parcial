@@ -1,60 +1,111 @@
 package com.example.appandoid.ui.search
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import com.example.appandoid.R
+import com.example.appandoid.databinding.FragmentSearchBinding
+import com.google.android.material.textfield.TextInputLayout
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.format.DateTimeParseException
+import java.util.Locale
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SearchFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SearchFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
+    private var _binding: FragmentSearchBinding? = null
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
+        _binding = FragmentSearchBinding.inflate(inflater, container, false)
+        binding.searchBtn.setOnClickListener{
+            if(validateForm()){
+                resetForm()
+                this.findNavController().navigate(R.id.action_searchFragment_to_resultsFragment)
+            }
+        }
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SearchFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SearchFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun validateForm():Boolean {
+        val dateTxt = binding.dateInput.text.toString()
+        val depTxt = binding.departureInput.text.toString()
+        val arrvTxt = binding.arrivalInput.text.toString()
+        val psngrTxt = binding.passengrInput.text.toString()
+        val clasTxt = binding.classInput.text.toString()
+        var re = false
+
+        if(validateInput(depTxt,binding.departureTxt) && validateInput(arrvTxt,binding.arrivalTxt)
+            && validateDate(dateTxt, binding.datePicker)  && validateInput(psngrTxt, binding.classPicker)
+            && validateInput(clasTxt,binding.classPicker)){
+            Toast.makeText(requireContext(), "Form submitted correctly", Toast.LENGTH_SHORT).show()
+            re  = true
+        }
+        return re
     }
+    private fun validateInput(input: String, layout: TextInputLayout): Boolean {
+        return if (input.isEmpty()) {
+            layout.error = "RequiredField"
+            false
+        } else {
+            layout.error = null
+            true
+        }
+    }
+
+
+    private fun validateDate(dateStr: String, layout: TextInputLayout): Boolean {
+        val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy", Locale.ENGLISH)
+        return try {
+            val inputDate = LocalDate.parse(dateStr, formatter)
+            val today = LocalDate.now()
+            Log.i("DateValidation", "Parsed date: $inputDate")  // Add logging for debugging
+            if (inputDate.isBefore(today)) {
+                layout.error = "Date must be the same or later than today"
+                false
+            } else {
+                layout.error = null
+                true
+            }
+        } catch (e: DateTimeParseException) {
+            Log.e("DateValidation", "Invalid date format", e)  // Log exception for debugging
+            layout.error = "Invalid date format. Please use dd/MM/yyyy."
+            false
+        }
+    }
+
+
+    private fun resetForm()
+    {
+        var message = "Departure: " + binding.departureInput.text
+        message += "Arrival: " + binding.arrivalInput.text
+        message += "Departure Date: " + binding.dateInput.text
+        message += "Passengers: " + binding.passengrInput.text
+        message += "Flight class: " + binding.classInput.text
+        AlertDialog.Builder(requireContext())
+            .setTitle("Form submitted correctly")
+            .setMessage(message)
+            .setPositiveButton("Okay"){ _,_ ->
+                binding.departureInput.text = null
+                binding.arrivalInput.text= null
+                binding.dateInput.text = null
+                binding.passengrInput.text = null
+                binding.classInput.text = null
+            }
+            .show()
+    }
+
 }
