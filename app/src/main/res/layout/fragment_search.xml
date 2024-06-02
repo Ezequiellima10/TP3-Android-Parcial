@@ -1,14 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.search.SearchFragment">
+    tools:context=".ui.search.SearchFragment"
+    android:background="@color/bkg_grey"
+    android:orientation="vertical"
+    tools:ignore="VisualLintBounds">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        style="@style/CardView.Light"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="8dp"
+        android:layout_gravity="center|top">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_form"
+                style="@style/tabs_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_tab"
+                app:layout_constraintBottom_toTopOf="@+id/departure_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/tab_one"/>
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/tab_round"
+                    tools:ignore="TextSizeCheck" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/departure_txt"
+                style="@style/input_txt"
+                app:startIconDrawable="@drawable/ic_plane_takeoff"
+                android:hint="@string/label_dep"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="3"
+                app:layout_constraintBottom_toTopOf="@+id/arrival_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tab_form" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/departure_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textCapCharacters"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/arrival_txt"
+                style="@style/input_txt"
+                app:startIconDrawable="@drawable/ic_plane_land"
+                android:hint="@string/label_arv"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="3"
+                app:layout_constraintBottom_toTopOf="@+id/date_picker"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/departure_txt">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/arrival_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textCapCharacters"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/date_picker"
+                style="@style/input_txt"
+                app:errorEnabled="true"
+                app:startIconDrawable="@drawable/ic_calendar"
+                android:hint="@string/label_date"
+                app:layout_constraintBottom_toTopOf="@+id/psgnr_picker"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/arrival_txt">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="date"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/psgnr_picker"
+                style="@style/psg_txt"
+                android:hint="@string/label_psngr"
+                app:errorEnabled="true"
+                app:startIconDrawable="@drawable/ic_passengers"
+                app:layout_constraintBottom_toTopOf="@+id/search_btn"
+                app:layout_constraintEnd_toStartOf="@+id/class_picker"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date_picker">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passengr_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/class_picker"
+                style="@style/class_style"
+                android:hint="@string/label_class"
+                android:lines="1"
+                app:errorEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/search_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/psgnr_picker"
+                app:layout_constraintTop_toBottomOf="@+id/date_picker"
+                app:layout_constraintVertical_bias="0.0"
+                app:startIconDrawable="@drawable/ic_class">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/class_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/search_btn"
+                style="@style/btn_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/psgnr_picker" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</LinearLayout>
