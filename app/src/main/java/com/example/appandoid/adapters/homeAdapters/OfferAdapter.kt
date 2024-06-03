@@ -15,10 +15,13 @@ class OfferAdapter (private val offerslist: List<OfferModel>) : RecyclerView.Ada
         return OfferViewHolder(layoutInflater.inflate(R.layout.item_offer_cell, parent, false))
     }
     override fun getItemCount(): Int = offerslist.size
-
     override fun onBindViewHolder(holder: OfferViewHolder, position: Int) {
-        val destination = offerslist[position]
-        holder.render(destination)
-    }
+        val offer = offerslist[position]
+        holder.title.text = offer.title
+        holder.description1.text = offer.title
+        holder.description2.text = offer.title
+        holder.description3.text = offer.title
+        holder.image.setImageResource(offer.imageResourceId)
 
+    }
 }

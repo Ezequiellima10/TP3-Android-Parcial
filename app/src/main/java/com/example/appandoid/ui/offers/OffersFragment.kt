@@ -5,56 +5,82 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.appandoid.R
+import com.example.appandoid.adapters.homeAdapters.OfferAdapter
+import com.example.appandoid.models.homeModels.OfferModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [OffersFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class OffersFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var offerAdapter: OfferAdapter
+  /*  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-    }
+    }*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
+        val view = inflater.inflate(R.layout.fragment_offers, container, false)
+
+        /*val offersRecyclerView = view.findViewById<RecyclerView>(R.id.rec_card_offers)
+        offersRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        offerAdapter = OfferAdapter(OfferProvider.getOffersList(requireContext()))
+        offersRecyclerView.adapter = offerAdapter*/
+
+
+        //-------------------------------------------------------------------------------------
+        //val titleMatercard = getString(R.string.offers_rv_tiitulo_mastecard)
+
+        val offersRecyclerView = view.findViewById<RecyclerView>(R.id.rec_card_offers)
+        offersRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+
+        val titleMatercard = "descuento master"
+        val titleVisa = "descuento visa"
+        val limitedOffer = "oferta limitada"
+        val descripcionVisa = "descrip"
+        val descripcionMaster= "descr"
+        val descripcionVisa2 = "descrip"
+        val descripcionMaster2= "descr"
+        val imageMastercard: Int = R.drawable.offer_mastercard
+        val imageVisa: Int = R.drawable.offer_visa
+
+
+        val ofertas = listOf(
+            OfferModel(titleMatercard,
+                descripcionMaster,
+                descripcionMaster2,
+                limitedOffer,
+                imageMastercard),
+            OfferModel(titleVisa,
+                descripcionVisa,
+                descripcionVisa2,
+                limitedOffer,
+                imageVisa)
+        )
+
+//----------------------------------------------------
+        // Initialize the adapter
+        offerAdapter = OfferAdapter(ofertas) // Pass an empty list or your data here
+
+        // Set the adapter to the RecyclerView
+        offersRecyclerView.adapter = offerAdapter
+
+
+
+
+//---------------------------------------------------
         return inflater.inflate(R.layout.fragment_offers, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment OffersFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            OffersFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
     }
-}
