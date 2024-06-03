@@ -41,7 +41,6 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:textSize="20dp"
-                android:text="Lufthansa Airlines"
                 android:textColor="@color/rdn_trip_dark_grey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/airlineLogo"
@@ -62,7 +61,6 @@
                 android:id="@+id/flightDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="03 hr 15min"
                 android:textSize="17dp"
                 android:textColor="@color/rdn_trip_dark_grey"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +92,6 @@
                     android:id="@+id/arrivalAirportId"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="EZE"
                     android:textColor="@color/blue"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
@@ -102,8 +99,7 @@
                 <TextView
                     android:id="@+id/arrivalAirportName"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Departure" />
+                    android:layout_height="match_parent" />
             </LinearLayout>
 
             <ImageView
@@ -130,7 +126,6 @@
                     android:id="@+id/departureAirportId"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="EZE"
                     android:textColor="@color/blue"
                     android:textStyle="bold"
                     android:textSize="20dp"
@@ -140,7 +135,6 @@
                     android:id="@+id/departureAirportName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Departure"
                     android:gravity="end"/>
 
             </LinearLayout>
@@ -185,7 +179,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:text="Economy Class"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/ic_armchair"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -195,7 +188,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
-                android:text="From"
                 android:textColor="@color/rdn_trip_dark_grey"
                 app:layout_constraintEnd_toStartOf="@id/flightPrice"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -206,7 +198,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="$1500"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                  />
@@ -219,7 +210,6 @@
             android:layout_height="60dp"
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/orange"
-            android:text="View Details"
             app:layout_constraintTop_toBottomOf="@id/innerConstraintLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
