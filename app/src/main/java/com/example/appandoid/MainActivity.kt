@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
     private val fragmentsNavigation = setOf(
-        R.id.homeFragment,
+        R.id.homeFragment5,
         R.id.searchFragment,
         R.id.offersFragment,
         R.id.profileFragment
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination: NavDestination, _ ->
 
             when (destination.id) {
-                R.id.homeFragment,
+                R.id.homeFragment5,
                 R.id.searchFragment,
                 R.id.offersFragment,
                 R.id.profileFragment
