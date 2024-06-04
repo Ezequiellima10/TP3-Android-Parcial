@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.appandoid.R
 import com.example.appandoid.models.homeModels.DestinationModel
 
@@ -19,7 +20,7 @@ class DestinationViewHolder (view: View) : RecyclerView.ViewHolder(view)  {
         title.text = model.title
         description.text = model.description
         code.text = model.code
-        // agregar imagen
+        Glide.with(image.context).load(model.imageResId).into(image)
 
     }
 }
