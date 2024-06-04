@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var flightAdapter: FlightAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.flight_list)
+        setContentView(R.layout.fragment_results)
 
         flightList = findViewById(R.id.flight_list)
         flightList.layoutManager = LinearLayoutManager(this)
