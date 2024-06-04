@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/card_image_destination_item"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:background="@color/cardview_dark_background"
+        android:scaleType="centerCrop" />
+    <!-- android:src="@drawable/your_image" -->
+    <TextView
+        android:id="@+id/title_destination_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Boracay"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/code_destination_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        tools:text="5D4N"
+        />
+
+    <TextView
+        android:id="@+id/description_destination_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        tools:text="Philippines" />
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>

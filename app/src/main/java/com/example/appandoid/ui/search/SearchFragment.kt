@@ -9,8 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appandoid.R
+import com.example.appandoid.adapters.RecViewAdapterOffers
 import com.example.appandoid.databinding.FragmentSearchBinding
+import com.example.appandoid.providers.CardProvider
 import com.google.android.material.textfield.TextInputLayout
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -31,6 +34,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
+        initRecycleView()
         binding.searchBtn.setOnClickListener{
             if(validateForm()){
                 resetForm()
@@ -106,6 +110,12 @@ class SearchFragment : Fragment() {
                 binding.classInput.text = null
             }
             .show()
+    }
+
+    private fun initRecycleView(){
+        val adapter = RecViewAdapterOffers(CardProvider.imagesList)
+        binding.offersRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.offersRv.adapter = adapter
     }
 
 }
