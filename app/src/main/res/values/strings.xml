@@ -9,7 +9,7 @@
     <string name="label_class">Class</string>
     <string name="tab_one">One way</string>
     <string name="tab_round">Round Trip</string>
-<!--    <string name="helper_txt">Required</string>-->
+    <!--    <string name="helper_txt">Required</string>-->
     <string name="title_explore">Explore</string>
     <string name="title_offers">Offers</string>
     <string name="title_profile">Profile</string>
@@ -31,9 +31,6 @@
     <string name="settings">Setting</string>
     <string name="logout">Log out</string>
     <string name="paymentdetails">Payment Detail</string>
-
-
-
 
 
     <string name="offers_txt">Offers</string>

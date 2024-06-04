@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         R.id.homeFragment,
         R.id.searchFragment,
         R.id.offersFragment,
-        R.id.profileFragment
+        R.id.profileFragment,
+
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +60,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeFragment,
                 R.id.searchFragment,
                 R.id.offersFragment,
-                R.id.profileFragment
+                R.id.profileFragment,
+                R.id.resultsFragment,
                 -> {
                     navView.visibility = BottomNavigationView.VISIBLE
                     binding.contentMainInclude.customToolbar.visibility = MaterialToolbar.VISIBLE
@@ -80,7 +82,6 @@ class MainActivity : AppCompatActivity() {
 //        loadPreferences();
     }
     override fun onSupportNavigateUp(): Boolean {
-        //Fuezo al boton de navegación de la toolbar que solo abra el menú Drawer
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {

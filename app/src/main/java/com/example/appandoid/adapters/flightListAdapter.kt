@@ -29,6 +29,8 @@ class FlightAdapter(private val flights: List<Flight>) : RecyclerView.Adapter<Fl
 
         // Calcular la duración del vuelo
         val duration = calculateDuration(currentFlight.departure_airport.time, currentFlight.arrival_airport.time)
+        // Guardamos el numero de vuelo en una variable
+        var flightNumber = currentFlight.flight_number
 
         holder.airline.text = "${currentFlight.airline} Airlines"
         holder.departureAirportName.text = departureAirportName
