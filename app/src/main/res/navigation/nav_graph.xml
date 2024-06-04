@@ -34,7 +34,7 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/resultsFragment"
+        android:id=" @+id/resultsFragment"
         android:name="com.example.appandoid.ui.results.ResultsFragment"
         android:label="fragment_results"
         tools:layout="@layout/fragment_results" />

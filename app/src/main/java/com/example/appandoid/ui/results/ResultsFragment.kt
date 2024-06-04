@@ -1,60 +1,91 @@
 package com.example.appandoid.ui.results
 
+import FlightAdapter
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.appandoid.R
+import com.example.appandoid.model.Flight
+import com.example.appandoid.model.FlightResponse
+import com.example.appandoid.services.FlightApiServiceBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ResultsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ResultsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var flightList: RecyclerView
+    private lateinit var flightAdapter: FlightAdapter
+    private val TAG = "ResultsFragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_results, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ResultsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ResultsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        flightList = view.findViewById(R.id.flight_list)
+        flightList.layoutManager = LinearLayoutManager(requireContext())
+
+        loadFlights { flightResponse ->
+            if (flightResponse != null) {
+                val allFlights = flightResponse.best_flights
+                val allFlightItems = mutableListOf<Flight>()
+
+                for (bestFlight in allFlights) {
+                    for (flight in bestFlight.flights) {
+                        allFlightItems.add(flight)
+                    }
+                }
+
+                Log.d(TAG, "Flights: $allFlightItems")
+
+                flightAdapter = FlightAdapter(allFlightItems)
+                flightList.adapter = flightAdapter
+            }
+        }
+    }
+
+    private fun loadFlights(callback: (FlightResponse?) -> Unit) {
+        val service = FlightApiServiceBuilder.create()
+
+        service.getFlights(
+            "google_flights",
+            "123",
+            "",
+            "",
+            "",
+            ""
+        ).enqueue(object : Callback<FlightResponse> {
+
+            override fun onResponse(call: Call<FlightResponse>, response: Response<FlightResponse>) {
+                if (response.isSuccessful) {
+                    val responsePost = response.body()
+                    callback(responsePost)
+                } else {
+                    Log.e(TAG, "Error in response: ${response.errorBody()?.string()}")
+                    callback(null)
                 }
             }
+
+            override fun onFailure(call: Call<FlightResponse>, throwable: Throwable) {
+                Log.e(TAG, "Error fetching flights: ${throwable.message}", throwable)
+                callback(null)
+            }
+        })
     }
+
 }
