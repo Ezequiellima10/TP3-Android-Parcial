@@ -40,8 +40,8 @@ class OffersFragment : Fragment() {
         //-------------------------------------------------------------------------------------
         //val titleMatercard = getString(R.string.offers_rv_tiitulo_mastecard)
 
-        val offersRecyclerView = view.findViewById<RecyclerView>(R.id.rec_card_offers)
-        offersRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        //val offersRecyclerView = view.findViewById<RecyclerView>(R.id.rec_card_offers)
+       // offersRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
 
         val titleMatercard = "descuento master"
@@ -70,10 +70,10 @@ class OffersFragment : Fragment() {
 
 //----------------------------------------------------
         // Initialize the adapter
-        offerAdapter = OfferAdapter(ofertas) // Pass an empty list or your data here
+        //offerAdapter = OfferAdapter(ofertas) // Pass an empty list or your data here
 
         // Set the adapter to the RecyclerView
-        offersRecyclerView.adapter = offerAdapter
+       // offersRecyclerView.adapter = offerAdapter
 
 
 

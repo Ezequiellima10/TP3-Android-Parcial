@@ -18,7 +18,7 @@
             android:id="@+id/offer_image_offer_item"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            tools:src="@drawable/offer_mastercard"  />
+            android:src="@drawable/offer_visa"  />
 
         <LinearLayout
             android:layout_width="0dp"
