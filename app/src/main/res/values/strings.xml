@@ -15,4 +15,23 @@
     <string name="title_profile">Profile</string>
     <string name="close_app">Close App</string>
     <string name="copyright">Reserved Rights</string>
+    <string name="location_name">Boracay</string>
+    <string name="duration">5D4N</string>
+    <string name="location_subtitle">Philippines</string>
+    <string name="precio_producto">$349</string>
+    <string name="texto_resumen">Overview</string>
+    <string name="texto_resumen_viaje">Spend 5 days and 4 nights in one of the best islands in the world! Bask in the sun while walking in the white sand beach and enjoy the night partying at the popular seaside bars.</string>
+    <string name="texto_fotos">Photos</string>
+    <string name="book_now">Book Now</string>
+    <string name="name">Macy Jhonson</string>
+    <string name="nombreciudad">Baguio Philipines</string>
+    <string name="per"> I like the beach ,mountains , forest and everything about nature </string>
+    <string name="code">Referral code</string>
+    <string name="settings">Setting</string>
+    <string name="logout">Log out</string>
+    <string name="paymentdetails">Payment Detail</string>
+    <resources>
+
+    </resources>
+
 </resources>
