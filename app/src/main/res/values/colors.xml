@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#1262AE</color>
+    <color name="rdn_trip_grey">#C9D2DC</color>
+    <color name="orange">#F99A0E</color>
+    <color name="bkg_grey">#F8F9FB</color>
+    <color name="card_bkg"> #00000008</color>
+
 </resources>

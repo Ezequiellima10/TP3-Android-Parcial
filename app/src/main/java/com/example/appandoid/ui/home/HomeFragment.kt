@@ -25,6 +25,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         val bannerImage = view.findViewById<ImageView>(R.id.banner_image)
@@ -44,6 +45,10 @@ class HomeFragment : Fragment() {
             offersRecyclerView.adapter = offerAdapter*/
 
         return inflater.inflate(R.layout.fragment_home, container, false)
+
+        // Inflate the layout for this fragment
+       // return inflater.inflate(R.layout.home_fragment, container, false)
+
     }
 
 

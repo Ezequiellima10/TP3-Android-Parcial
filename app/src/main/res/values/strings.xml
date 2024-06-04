@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">AppAndoid</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_btn">Search</string>
+    <string name="label_dep">From</string>
+    <string name="label_arv">To</string>
+    <string name="label_date">Departure Date</string>
+    <string name="label_psngr">Passengers</string>
+    <string name="label_class">Class</string>
+    <string name="tab_one">One way</string>
+    <string name="tab_round">Round Trip</string>
+<!--    <string name="helper_txt">Required</string>-->
+    <string name="title_explore">Explore</string>
+    <string name="title_offers">Offers</string>
+    <string name="title_profile">Profile</string>
+    <string name="close_app">Close App</string>
+    <string name="copyright">Reserved Rights</string>
+    <string name="offers_txt">Offers</string>
 </resources>
