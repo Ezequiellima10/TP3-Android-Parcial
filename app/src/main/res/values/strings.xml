@@ -15,6 +15,7 @@
     <string name="title_profile">Profile</string>
     <string name="close_app">Close App</string>
     <string name="copyright">Reserved Rights</string>
+
     <string name="location_name">Boracay</string>
     <string name="duration">5D4N</string>
     <string name="location_subtitle">Philippines</string>
@@ -30,8 +31,11 @@
     <string name="settings">Setting</string>
     <string name="logout">Log out</string>
     <string name="paymentdetails">Payment Detail</string>
-    <resources>
 
-    </resources>
+
+
+
+
+    <string name="offers_txt">Offers</string>
 
 </resources>
