@@ -1,7 +1,6 @@
 package com.example.appandoid
 
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +18,7 @@ import com.example.appandoid.databinding.ActivityMainBinding
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
@@ -27,12 +27,14 @@ class MainActivity : AppCompatActivity() {
         R.id.homeFragment,
         R.id.searchFragment,
         R.id.offersFragment,
-        R.id.profileFragment
+        R.id.profileFragment,
+
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -58,7 +60,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeFragment,
                 R.id.searchFragment,
                 R.id.offersFragment,
-                R.id.profileFragment
+                R.id.profileFragment,
+                R.id.resultsFragment,
                 -> {
                     navView.visibility = BottomNavigationView.VISIBLE
                     binding.contentMainInclude.customToolbar.visibility = MaterialToolbar.VISIBLE
@@ -71,6 +74,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+
         }
 //        binding.txtCloseApp.setOnClickListener(View.OnClickListener {
 //            finish()
@@ -78,7 +82,6 @@ class MainActivity : AppCompatActivity() {
 //        loadPreferences();
     }
     override fun onSupportNavigateUp(): Boolean {
-        //Fuezo al boton de navegación de la toolbar que solo abra el menú Drawer
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {

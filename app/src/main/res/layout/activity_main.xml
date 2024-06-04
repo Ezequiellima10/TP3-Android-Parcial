@@ -10,10 +10,12 @@
     tools:openDrawer="start"
     tools:context=".MainActivity">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <include
             android:id="@+id/content_main_include"

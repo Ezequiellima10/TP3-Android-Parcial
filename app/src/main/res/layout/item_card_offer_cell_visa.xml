@@ -1,0 +1,60 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    tools:context=".ui.offers.OffersFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/offer_image_offer_item"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/offer_mastercard"  />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="23dp">
+
+            <TextView
+                android:id="@+id/offer_title_offer_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20% discount"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/offer_description_1_offer_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="for" />
+
+            <TextView
+                android:id="@+id/offer_description_2_offer_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mastercard users" />
+
+            <TextView
+                android:id="@+id/offer_description_3_offer_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="limited time offer!" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

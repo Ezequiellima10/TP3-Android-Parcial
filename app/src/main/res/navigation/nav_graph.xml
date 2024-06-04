@@ -6,11 +6,6 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.appandoid.ui.home.HomeFragment"
-        android:label="fragment_home2"
-        tools:layout="@layout/fragment_home2" />
-    <fragment
         android:id="@+id/offersFragment"
         android:name="com.example.appandoid.ui.offers.OffersFragment"
         android:label="fragment_offers"
@@ -37,5 +32,19 @@
         android:id="@+id/resultsFragment"
         android:name="com.example.appandoid.ui.results.ResultsFragment"
         android:label="fragment_results"
-        tools:layout="@layout/fragment_results" />
+        tools:layout="@layout/fragment_results" >
+        <action
+            android:id="@+id/action_resultsFragment_to_detailFragment2"
+            app:destination="@id/detailFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.appandoid.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/detailFragment2"
+        android:name="com.example.appandoid.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>
