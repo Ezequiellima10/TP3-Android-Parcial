@@ -1,18 +1,15 @@
 package com.example.appandoid.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appandoid.R
 import com.example.appandoid.adapters.homeAdapters.DestinationAdapter
-import com.example.appandoid.adapters.homeAdapters.OfferAdapter
 import com.example.appandoid.providers.DestinationProvider
 //import com.example.appandoid.providers.OfferProvider
 
@@ -20,7 +17,7 @@ import com.example.appandoid.providers.DestinationProvider
 class HomeFragment : Fragment() {
 
     private lateinit var destinationAdapter: DestinationAdapter
-    private lateinit var offerAdapter: OfferAdapter
+   // private lateinit var offerAdapter: OfferAdapter
 
 
     override fun onCreateView(

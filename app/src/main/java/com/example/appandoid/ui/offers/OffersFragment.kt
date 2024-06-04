@@ -5,16 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.appandoid.R
-import com.example.appandoid.adapters.homeAdapters.OfferAdapter
-import com.example.appandoid.models.homeModels.OfferModel
-
 
 
 class OffersFragment : Fragment() {
-    private lateinit var offerAdapter: OfferAdapter
+   // private lateinit var offerAdapter: OfferAdapter
   /*  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -44,7 +39,7 @@ class OffersFragment : Fragment() {
        // offersRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
 
-        val titleMatercard = "descuento master"
+      /*  val titleMatercard = "descuento master"
         val titleVisa = "descuento visa"
         val limitedOffer = "oferta limitada"
         val descripcionVisa = "descrip"
@@ -66,7 +61,7 @@ class OffersFragment : Fragment() {
                 descripcionVisa2,
                 limitedOffer,
                 imageVisa)
-        )
+        )*/
 
 //----------------------------------------------------
         // Initialize the adapter

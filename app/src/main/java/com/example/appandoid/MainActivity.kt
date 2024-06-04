@@ -14,8 +14,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        //var homeFragment = supportFragmentManager.findFragmentById(R.id.home_fragment) as HomeFragment
-        var offersFragment = supportFragmentManager.findFragmentById(R.id.fragment_offers) as OffersFragment
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

@@ -14,7 +14,7 @@ class DestinationAdapter(private val destinationlist: List<DestinationModel>) : 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DestinationViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return DestinationViewHolder(layoutInflater.inflate(R.layout.item_offer_cell, parent, false))
+        return DestinationViewHolder(layoutInflater.inflate(R.layout.item_destination, parent, false))
     }
     override fun getItemCount(): Int = destinationlist.size
 
